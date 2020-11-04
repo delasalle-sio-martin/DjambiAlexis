@@ -5,7 +5,7 @@ from classes.diplomatclass import Diplomat
 from classes.militantclass import Militant
 from classes.reporterclass import Reporter
 from classes.necromobile import Necromobile
-
+from tkinter import *
 
 if __name__ =='__main__':
 
@@ -106,3 +106,11 @@ if __name__ =='__main__':
             print(j, end=',')
             print('vide')
 
+
+    fenetre = Tk()
+    champ_label = Label(fenetre, text="Djambi")
+    champ_label.pack()
+    for r in range(9):
+        for c in range(9):
+            Label(fenetre, text='R%s/C%s' % (r, c)).grid(row=r, column=c)
+    fenetre.mainloop()
