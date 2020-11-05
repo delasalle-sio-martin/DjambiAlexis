@@ -11,6 +11,8 @@ from PIL import Image, ImageTk
 
 class Board:
 
+    clickedCell = None
+
     def __init__(self, dimensions):
         self.dimensions = dimensions
         cells = []
@@ -115,13 +117,21 @@ class Board:
         militantRed4 = Militant((8, 8), red)
         board.cells[8][8].pions = [militantRed4]
 
-    def move(self):
-        pass
+    #Déplacer une partie de l'initBoard dans boardcell pour que ça fonctionne
+    def move(self, destinationX, destinationY, fenetre, board):
+        selectedPion = self.clickedCell.pions[0]
+        beforeMovementPion = selectedPion.position
+        selectedPion.position = (destinationX, destinationY)
+        self.cells[destinationX][destinationY].pions = [selectedPion]
+        self.cells[destinationX][destinationY].initBoard(fenetre, destinationX, destinationY, board)
+
+        self.clickedCell.pions[0] = None
+        self.clickedCell.initBoard(fenetre, beforeMovementPion[0], beforeMovementPion[1], board)
 
     def initBoard(self, fenetre):
         for i in range(len(self.cells)):
             for j in range(len(self.cells[i])):
-                if(len(self.cells[i][j].pions)) > 0:
+                if len(self.cells[i][j].pions) > 0:
                     for k in range(len(self.cells[i][j].pions)):
                         image = Image.open(self.cells[i][j].pions[k].image())
                         image = image.resize((50, 50))
