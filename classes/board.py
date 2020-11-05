@@ -1,14 +1,13 @@
-from classes.boardcellclass import BoardCell
-from classes.assassinclass import Assassin
-from classes.chiefclass import Chief
-from classes.diplomatclass import Diplomat
-from classes.militantclass import Militant
-from classes.reporterclass import Reporter
+from classes.boardcell import BoardCell
+from classes.assassin import Assassin
+from classes.chief import Chief
+from classes.diplomate import Diplomat
+from classes.militant import Militant
+from classes.reporter import Reporter
 from classes.necromobile import Necromobile
 from classes.color import Color
 from tkinter import *
 from PIL import Image, ImageTk
-
 
 class Board:
 
@@ -25,7 +24,7 @@ class Board:
     # Il faudrait revoir ensuite cette génération
     def generateFourPlayerSet(self, board):
 
-        #Création des différentes couleurs
+        # Création des différentes couleurs
         green = Color("Green", "#01D758")
         blue = Color("Blue", "#0131B4")
         red = Color("Red", "#DB1702")
@@ -140,8 +139,3 @@ class Board:
                     btn.image = imageBoard
 
                 btn.grid(row=i, column=j)
-
-
-
-
-

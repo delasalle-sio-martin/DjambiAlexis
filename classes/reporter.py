@@ -1,7 +1,7 @@
-from classes.pionclass import Pion
+from classes.pion import Pion
 
 
-class Diplomat(Pion):
+class Reporter(Pion):
 
     def available_moves(self):
         pass
@@ -10,4 +10,4 @@ class Diplomat(Pion):
         pass
 
     def image(self):
-        return "assets/diplomate.png"
+        return "assets/reporter.png"

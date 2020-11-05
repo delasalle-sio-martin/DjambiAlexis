@@ -1,8 +1,7 @@
 from tkinter import *
-from classes.boardclass import Board
+from classes.board import Board
 
-if __name__ =='__main__':
-
+if __name__ == '__main__':
     board = Board((9, 9))
     fenetre = Tk()
     fenetre.title = "Djambi"

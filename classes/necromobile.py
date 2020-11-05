@@ -1,4 +1,4 @@
-from classes.pionclass import Pion
+from classes.pion import Pion
 
 
 class Necromobile(Pion):
