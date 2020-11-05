@@ -125,15 +125,18 @@ class Board:
                 if(len(self.cells[i][j].pions)) > 0:
                     for k in range(len(self.cells[i][j].pions)):
                         image = Image.open(self.cells[i][j].pions[k].image())
+                        image = image.resize((50, 50))
                         imageBoard = ImageTk.PhotoImage(image)
                         btn = Button(fenetre, image=imageBoard,
-                                      bg=self.cells[i][j].pions[k].color.code, height="5", width="10")
+                                      bg=self.cells[i][j].pions[k].color.code)
                         btn.image = imageBoard
 
                 else:
                     image = Image.open("assets/blank.png")
+                    image = image.convert("RGBA")
+                    image = image.resize((50, 50))
                     imageBoard = ImageTk.PhotoImage(image)
-                    btn = Button(fenetre, image=imageBoard, height="5", width="10")
+                    btn = Button(fenetre, image=imageBoard)
                     btn.image = imageBoard
 
                 btn.grid(row=i, column=j)
