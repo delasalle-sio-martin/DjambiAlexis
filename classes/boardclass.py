@@ -7,6 +7,8 @@ from classes.reporterclass import Reporter
 from classes.necromobile import Necromobile
 from classes.color import Color
 from tkinter import *
+from PIL import Image, ImageTk
+
 
 class Board:
 
@@ -122,20 +124,19 @@ class Board:
             for j in range(len(self.cells[i])):
                 if(len(self.cells[i][j].pions)) > 0:
                     for k in range(len(self.cells[i][j].pions)):
-                        cell = Button(fenetre, text=self.cells[i][j].pions[k].__class__.__name__,
+                        image = Image.open(self.cells[i][j].pions[k].image())
+                        imageBoard = ImageTk.PhotoImage(image)
+                        btn = Button(fenetre, image=imageBoard,
                                       bg=self.cells[i][j].pions[k].color.code, height="5", width="10")
-                        print(i, end=',')
-                        print(j, end=': ')
-                        print(self.cells[i][j].pions[k].__class__.__name__, end=' ')
-                        print(self.cells[i][j].pions[k].color)
+                        btn.image = imageBoard
 
                 else:
-                    cell = Button(fenetre, height="5", width="10")
-                    print(i, end=',')
-                    print(j, end=': ')
-                    print("vide")
+                    image = Image.open("assets/blank.png")
+                    imageBoard = ImageTk.PhotoImage(image)
+                    btn = Button(fenetre, image=imageBoard, height="5", width="10")
+                    btn.image = imageBoard
 
-                cell.grid(row=i, column=j)
+                btn.grid(row=i, column=j)
 
 
 

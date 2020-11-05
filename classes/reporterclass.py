@@ -8,3 +8,6 @@ class Reporter(Pion):
 
     def after_move(self):
         pass
+
+    def image(self):
+        return "assets/reporter.png"
