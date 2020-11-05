@@ -75,7 +75,7 @@ class Board:
 
         # Initialisation pièces bleues
         chiefBlue = Chief((6, 0), blue)
-        board.cells[6][0].pions = [chiefYellow]
+        board.cells[6][0].pions = [chiefBlue]
         assassinBlue = Assassin((6, 1), blue)
         board.cells[6][1].pions = [assassinBlue]
         militantBlue = Chief((6, 2), blue)
