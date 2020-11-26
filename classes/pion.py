@@ -1,11 +1,13 @@
 from abc import ABC, abstractmethod
+from classes.color import Color
 
 
 class Pion(ABC):
     """
     Pion is an abstract class (ABC) that will be used by the others pawns
     """
-    def __init__(self, position, color):
+
+    def __init__(self, position: (int, int), color: Color):
         self.alive = True
         self.position = position
         self.color = color
