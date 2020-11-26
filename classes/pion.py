@@ -2,7 +2,9 @@ from abc import ABC, abstractmethod
 
 
 class Pion(ABC):
-
+    """
+    Pion is an abstract class (ABC) that will be used by the others pawns
+    """
     def __init__(self, position, color):
         self.alive = True
         self.position = position
@@ -18,4 +20,8 @@ class Pion(ABC):
 
     @abstractmethod
     def image(self):
+        """
+        Represent the path to the icon of a pawn used on the board
+        :return:
+        """
         return "assets/blank.png"

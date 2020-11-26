@@ -3,15 +3,18 @@ from PIL import Image, ImageTk
 
 
 class BoardCell:
+    """
+    Class used to symbolize one cell, in which it is possible to put a pawn
+    """
 
     def __init__(self, pions: []):
         self.pions = pions
         self.btn = None
 
-    # FIXME : Quelque chose ne fonctionne pas ici, et crée uniquement des cases blanches
+    # FIXME : Something doesn't work here, and only creates white squares.
     def initBoard(self, fenetre: Tk, x: int, y: int, board):
         """
-
+        Allows us to put a visual on each pawn placed in the board
         :param fenetre:
         :param x:
         :param y:
