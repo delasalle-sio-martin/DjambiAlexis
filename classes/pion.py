@@ -1,4 +1,5 @@
-from abc import ABC,abstractmethod
+from abc import ABC, abstractmethod
+
 
 class Pion(ABC):
 
@@ -15,3 +16,6 @@ class Pion(ABC):
     def after_move(self):
         pass
 
+    @abstractmethod
+    def image(self):
+        return "assets/blank.png"
